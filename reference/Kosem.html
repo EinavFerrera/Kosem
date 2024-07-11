@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KOSEM</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../assets/styles/KOSEM-style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=MuseoModerno:wght@500;900&family=Work+Sans:wght@300;400;500;600;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body onload="InitializeData()">
+    <section class="navibar">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark"
+        aria-label="Offcanvas navbar large"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand mouseo" href="../index.html">
+            <img
+              src="../assets/images/logo noedges light.png"
+              alt="EF logo"
+              width="35"
+            />
+            Einav Ferrera
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar2"
+            aria-controls="offcanvasNavbar2"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end text-bg-dark"
+            tabindex="-1"
+            id="offcanvasNavbar2"
+            aria-labelledby="offcanvasNavbar2Label"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">
+                <img
+                  src="../assets/images/logo noedges light.png"
+                  alt="EF logo"
+                  width="35"
+                />
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active mouseo"
+                    aria-current="page"
+                    href="./pages/Kosem.html"
+                    >Kosem</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mouseo" href="./protflio.html"
+                    >Protfolio</a
+                  >
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle mouseo"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Contact me
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="container">
+                      <div class="row">
+                        <a
+                          class="dropdown-item col text-center"
+                          href="https://wa.me/972549792022"
+                          target="_blank"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="currentColor"
+                            class="bi bi-whatsapp"
+                            viewBox="0 0 16 16"
+                            alt="whatsapp"
+                          >
+                            <path
+                              d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+                            /></svg
+                        ></a>
+                        <a
+                          class="dropdown-item col text-center"
+                          href="mailto:Einavf4@gmail.com"
+                          target="_blank"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="currentColor"
+                            class="bi bi-envelope"
+                            viewBox="0 0 16 16"
+                            alt="mail"
+                          >
+                            <path
+                              d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+                            /></svg
+                        ></a>
+                        <a
+                          class="dropdown-item col text-center"
+                          href="https://www.linkedin.com/in/einav-ferrera"
+                          target="_blank"
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="currentColor"
+                            class="bi bi-linkedin"
+                            viewBox="0 0 16 16"
+                            alt="linkedin"
+                          >
+                            <path
+                              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                            /></svg
+                        ></a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <section class="shift-needs-input">
+      <h2
+        class="dark mouseo py-3"
+        style="width: 100%; text-align: center; font-size: 2.5rem"
+      >
+        Shift Needs
+      </h2>
+      <form id="shiftNeedsForm" class="container text-center">
+        <!-- Sunday -->
+        <div class="d-inline-flex flex-column align-items-center">
+          <label>Sunday:</label>
+          <div class="d-flex pe-2">
+            <input
+              id="sunday1"
+              name="sunday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="sunday2"
+              name="sunday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="sunday3"
+              name="sunday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+          </div>
+        </div>
+        <!-- Monday -->
+        <div class="d-inline-flex flex-column align-items-center">
+          <label>Monday:</label>
+          <div class="d-flex pe-2">
+            <input
+              id="monday1"
+              name="monday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="monday2"
+              name="monday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="monday3"
+              name="monday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+          </div>
+        </div>
+        <!-- Tuesday -->
+        <div class="d-inline-flex flex-column align-items-center">
+          <label>Tuesday:</label>
+          <div class="d-flex pe-2">
+            <input
+              id="tuesday1"
+              name="tuesday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="tuesday2"
+              name="tuesday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="tuesday3"
+              name="tuesday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+          </div>
+        </div>
+        <!-- Wednesday -->
+        <div class="d-inline-flex flex-column align-items-center">
+          <label>Wednesday:</label>
+          <div class="d-flex pe-2">
+            <input
+              id="wednesday1"
+              name="wednesday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="wednesday2"
+              name="wednesday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="wednesday3"
+              name="wednesday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+          </div>
+        </div>
+        <!-- Thursday -->
+        <div class="d-inline-flex flex-column align-items-center">
+          <label>Thursday:</label>
+          <div class="d-flex pe-2">
+            <input
+              id="thursday1"
+              name="thursday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="thursday2"
+              name="thursday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="thursday3"
+              name="thursday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+          </div>
+        </div>
+        <!-- Friday -->
+        <div class="d-inline-flex flex-column align-items-center">
+          <label>Friday:</label>
+          <div class="d-flex pe-2">
+            <input
+              id="friday1"
+              name="friday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="friday2"
+              name="friday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="friday3"
+              name="friday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+          </div>
+        </div>
+        <!-- Saturday -->
+        <div class="d-inline-flex flex-column align-items-center">
+          <label>Saturday:</label>
+          <div class="d-flex pe-2">
+            <input
+              id="saturday1"
+              name="saturday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="saturday2"
+              name="saturday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+            <input
+              id="saturday3"
+              name="saturday"
+              required
+              class="form-control"
+              style="width: 40px"
+              value="1"
+            />
+          </div>
+        </div>
+      </form>
+      <div class="text-center">
+        <button
+          type="button"
+          class="btn btn-outline-dark mouseo justify-content-center mt-3"
+          onclick="setShiftNeeds()"
+        >
+          set
+        </button>
+      </div>
+    </section>
+
+    <section class="user-input">
+      <h2
+        class="dark mouseo pt-5"
+        style="width: 100%; text-align: center; font-size: 2.5rem"
+      >
+        User Input
+      </h2>
+      <form id="userInputForm" class="container">
+        <div class="row g-5 justify-content-center">
+          <div class="col-4">
+            <label for="userName" class="form-label">Name:</label>
+            <input
+              type="text"
+              id="userName"
+              name="userName"
+              class="form-control"
+            />
+          </div>
+          <div class="col-4 col-md-3 col-xl-2">
+            <label for="maxShifts" class="form-label">Max Num of Shifts:</label>
+            <div
+              class="btn-group"
+              role="group"
+              style="border: #dee2e6 solid 1px"
+            >
+              <input
+                type="text"
+                id="maxShifts"
+                name="maxShifts"
+                class="form-control"
+                style="border: none"
+              />
+              <button
+                type="button"
+                class="btn btn-light dropdown-toggle dropdown-toggle-split"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="visually-hidden">Toggle Dropend</span>
+              </button>
+              <div
+                class="dropdown-menu w-25"
+                style="background-color: rgba(0, 0, 0, 0); border: 0px"
+              >
+                <div class="input-group mb">
+                  <span
+                    class="input-group-text"
+                    id="inputGroup-sizing-default"
+                    style="background-color: #ebe9e4"
+                    >Min Shifts</span
+                  >
+                  <input
+                    type="text"
+                    id="minShifts"
+                    name="minShifts"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-1 align-self-center text-center"
+            style="margin-top: 80px"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-dark mouseo"
+              onclick="checkAll()"
+              style="font-size: 0.7rem; width: 5.5rem"
+            >
+              Check All
+            </button>
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-12 text-center gy-5">
+            <!-- Sunday -->
+            <div class="d-inline-flex flex-column align-items-center">
+              <label
+                id="sunday"
+                class="btn-outline-dark m-2"
+                onclick="checkAll(this)"
+                >Sunday</label
+              >
+              <div class="d-flex p-2">
+                <div
+                  class="btn-group mx-auto"
+                  role="group"
+                  aria-label="Basic checkbox toggle button group"
+                >
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="sunday1Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="sunday1Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="sunday2Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="sunday2Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="sunday3Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="sunday3Checkbox"
+                  ></label>
+                </div>
+              </div>
+            </div>
+            <!-- Monday -->
+            <div class="d-inline-flex flex-column align-items-center">
+              <label
+                id="monday"
+                class="btn-outline-dark m-2"
+                onclick="checkAll(this)"
+                >Monday</label
+              >
+              <div class="d-flex p-2">
+                <div
+                  class="btn-group mx-auto"
+                  role="group"
+                  aria-label="Basic checkbox toggle button group"
+                >
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="monday1Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="monday1Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="monday2Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="monday2Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="monday3Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="monday3Checkbox"
+                  ></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tuesday -->
+            <div class="d-inline-flex flex-column align-items-center">
+              <label
+                id="tuesday"
+                class="btn-outline-dark m-2"
+                onclick="checkAll(this)"
+                >Tuesday</label
+              >
+              <div class="d-flex p-2">
+                <div
+                  class="btn-group mx-auto"
+                  role="group"
+                  aria-label="Basic checkbox toggle button group"
+                >
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="tuesday1Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="tuesday1Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="tuesday2Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="tuesday2Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="tuesday3Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="tuesday3Checkbox"
+                  ></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wednesday -->
+            <div class="d-inline-flex flex-column align-items-center">
+              <label
+                id="wednesday"
+                class="btn-outline-dark m-2"
+                onclick="checkAll(this)"
+                >Wednesday</label
+              >
+              <div class="d-flex p-2">
+                <div
+                  class="btn-group mx-auto"
+                  role="group"
+                  aria-label="Basic checkbox toggle button group"
+                >
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="wednesday1Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="wednesday1Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="wednesday2Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="wednesday2Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="wednesday3Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="wednesday3Checkbox"
+                  ></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thursday -->
+            <div class="d-inline-flex flex-column align-items-center">
+              <label
+                id="thursday"
+                class="btn-outline-dark m-2"
+                onclick="checkAll(this)"
+                >Thursday</label
+              >
+              <div class="d-flex p-2">
+                <div
+                  class="btn-group mx-auto"
+                  role="group"
+                  aria-label="Basic checkbox toggle button group"
+                >
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="thursday1Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="thursday1Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="thursday2Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="thursday2Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="thursday3Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="thursday3Checkbox"
+                  ></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Friday -->
+            <div class="d-inline-flex flex-column align-items-center">
+              <label
+                id="friday"
+                class="btn-outline-dark m-2"
+                onclick="checkAll(this)"
+                >Friday</label
+              >
+              <div class="d-flex p-2">
+                <div
+                  class="btn-group mx-auto"
+                  role="group"
+                  aria-label="Basic checkbox toggle button group"
+                >
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="friday1Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="friday1Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="friday2Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="friday2Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="friday3Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="friday3Checkbox"
+                  ></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Saturday -->
+            <div class="d-inline-flex flex-column align-items-center">
+              <label
+                id="saturday"
+                class="btn-outline-dark m-2"
+                onclick="checkAll(this)"
+                >Saturday</label
+              >
+              <div class="d-flex p-2">
+                <div
+                  class="btn-group mx-auto"
+                  role="group"
+                  aria-label="Basic checkbox toggle button group"
+                >
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="saturday1Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="saturday1Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="saturday2Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="saturday2Checkbox"
+                  ></label>
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="saturday3Checkbox"
+                    autocomplete="off"
+                  />
+                  <label
+                    class="btn btn-outline-secondary"
+                    for="saturday3Checkbox"
+                  ></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-12 text-center gy-4">
+            <button
+              type="button"
+              class="btn btn-outline-dark mouseo fs-6"
+              onclick="addUser()"
+            >
+              insert
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="signed-users">
+      <div
+        id="sigend-user-container"
+        class="d-flex flex-wrap gap-2 justify-content-center py-5"
+      ></div>
+    </section>
+
+    <section class="shift-table-generator">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="btn-group dropend">
+          <button
+            class="btn btn-dark mouseo py-2 fs-4 position-relative"
+            style="width: 20rem"
+            onclick="generateConfirmation($('#autoRunInput').val())"
+          >
+            <span> generate </span>
+            <span
+              role="button"
+              id="toggel-error-view"
+              class="btn btn-dark position-absolute top-50 start-0 translate-middle rounded-pill fs-4"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseExample"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+              onclick="event.stopPropagation();"
+            >
+              !
+            </span>
+            <button
+              type="button"
+              class="btn btn-dark dropdown-toggle dropdown-toggle-split"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span class="visually-hidden">Toggle Dropend</span>
+            </button>
+          </button>
+          <div
+            class="dropdown-menu w-25"
+            style="background-color: rgba(0, 0, 0, 0); border: 0px"
+          >
+            <div class="input-group mb-3">
+              <span
+                class="input-group-text mouseo"
+                id="inputGroup-sizing-default"
+                >AutoRun</span
+              >
+              <input
+                id="autoRunInput"
+                type="text"
+                class="form-control"
+                aria-label="AutoRun input"
+                aria-describedby="inputGroup-sizing-default"
+                value="1"
+              />
+            </div>
+          </div>
+        </div>
+
+        <span
+          class="badge d-flex text-center text-dark-emphasis bg-dark-subtle rounded-pill m-2"
+          data-bs-trigger="hover"
+          data-bs-toggle="popover"
+          data-bs-placement="top"
+          data-bs-content="Delete all Users"
+        >
+          <button
+            type="button"
+            class="btn-close m-2"
+            aria-label="Close"
+            onclick="localStorageClear()"
+          ></button>
+        </span>
+      </div>
+
+      <!-- Button for toggling views -->
+      <div class="d-flex justify-content-center">
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="toggel-button"
+            onclick="toggelWeekDisplay()"
+          />
+          <label class="form-check-label" for="toggel-button"
+            >Per Sholet View</label
+          >
+        </div>
+      </div>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body text-center" style="width: 50%; left: 25%">
+          <ul style="list-style-type: none"></ul>
+        </div>
+      </div>
+      <!-- Sholet Shifts Display -->
+      <div
+        id="sholtim-container"
+        class="d-flex flex-row flex-wrap mb-3 pb-4 pt-3 justify-content-around"
+      ></div>
+      <!-- Shift Sholtim Display -->
+      <div
+        id="shift-container"
+        class="d-flex flex-row flex-wrap mb-3 pb-4 pt-3 justify-content-around"
+      ></div>
+    </section>
+
+    <section class="Pop-Ups">
+      <div class="toast-container position-fixed bottom-0 end-0"></div>
+      <!-- Clear all data base Modal -->
+      <div
+        class="modal fade"
+        id="confirmClearModal"
+        tabindex="-1"
+        aria-labelledby="confirmClearModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="confirmClearModalLabel">
+                It's a one way ticket...
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to clear the table?
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Hadal
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="confirmClearBtn"
+              >
+                2,3..Shwa-ger
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- re-generate on a perfect table -->
+      <div
+        class="modal fade"
+        id="confirmGenerateModal"
+        tabindex="-1"
+        aria-labelledby="confirmGenerateModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="confirmGenerateModalLabel">
+                such a shame.. its a beautiful Table...
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to re-Generate a table?
+              <br />The current table will not be visiable anymore.
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                id="confirmGenerateBtn"
+              >
+                Rashay
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Hadal
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer gradient-background">
+      <div class="container">
+        <footer
+          class="d-flex flex-wrap justify-content-between align-items-center py-3 pt-5 mt-4"
+        >
+          <p class="col-md-4 mb-0 text-body-secondary">© 2023 Einav Ferrera</p>
+          <a href="../index.html">
+            <img
+              src="../assets/images/logo- noedges.png"
+              alt="EF logo"
+              width="50"
+              href="../index.html"
+            />
+          </a>
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item">
+              <a
+                href="./protflio.html"
+                class="nav-link px-2 text-body-secondary work"
+                >Protfolio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="https://wa.me/972549792022"
+                class="nav-link px-2 text-body-secondary work"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </footer>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/scripts/Kosem- Variable.js"></script>
+    <script src="../assets/scripts/Kosem- New User.js"></script>
+    <script src="../assets/scripts/Kosem- Table Generator.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+#toggel-error-view {
+  background-color: #3c2426;
+  border: solid 2px #38040e !important;
+
+  left: -30px !important;
+  opacity: 0; /* Initially set opacity to 0 */
+  transition: opacity 0.5s ease-in-out; /* Add a transition for smooth animation */
+}
+
+.visible {
+  opacity: 1 !important; /* Make the element visible by changing opacity to 1 */
+}
+
+.table-view {
+  display: inline-flex;
+  background-color: #cfe2ff;
+  border-collapse: collapse;
+  border-radius: 10px;
+  padding: 3px;
+  position: relative;
+  top: -3px;
+  left: 2px;
+  box-shadow: inset 0 0px 14px 2px rgb(255 255 255);
+}
+.grid-col {
+  font-size: 0.5rem;
+  border-collapse: collapse;
+  width: 12px;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.grid-cell {
+  text-align: center;
+  border-collapse: collapse;
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+.table-popover .popover-body {
+  padding: 0px !important;
+  height: 65px !important;
+  width: 107px !important;
+}
+
+.grid-cell.pick {
+  background-color: #6d757d;
+}
+
+.dropdown-menu.w-25.show .input-group.mb > * {
+  border-color: #dee2e6;
+  background-color: #f6f6f6;
+}
+.hasMinShifts {
+  background-color: #c5f8c0;
+}
+
+.dropdown-no-border {
+  border: 1px #dfe2e7 solid;
+  border-left: 0px;
+}
