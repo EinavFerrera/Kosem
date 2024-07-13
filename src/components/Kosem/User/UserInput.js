@@ -43,7 +43,6 @@ function UserInput(props) {
   }
 
   function addUser() {
-    console.log("User added:", formValues);
     props.saveUser_Local(formValues);
     setFormValues(emptyObj);
   }

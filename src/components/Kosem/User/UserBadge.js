@@ -1,27 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Badge, Button, Popover, OverlayTrigger } from "react-bootstrap";
 
-function UserBadge({ users, removeUser }) {
-  function renderPopover(userShifts) {
-    <Popover id="popover-basic">
-      <Popover.Body>
-        <div className="table-view">
-          {["Su", "M", "Tu", "W", "Th", "F", "Sa"].map((day, dayIndex) => (
-            <div key={day} className="grid-col">
-              {day}
-              {[0, 1, 2].map((shiftIndex) => (
-                <div
-                  key={shiftIndex}
-                  className={`grid-cell ${
-                    userShifts[dayIndex * 3 + shiftIndex] === 1 ? "pick" : ""
-                  }`}
-                ></div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </Popover.Body>
-    </Popover>;
+function UserBadge(props) {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
+
+  let daysShortenNames = ["Su", "M", "Tu", "W", "Th", "F", "Sa"];
+  function renderPopover(days) {
+    return (
+      <Popover id="popover-basic">
+        <Popover.Body
+          onClick={() => {
+            console.log("soon will be able to edit");
+          }}
+        >
+          <div className="table-view">
+            {[
+              "sunday",
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+            ].map((day, dayIndex) => (
+              <div key={day} className="grid-col">
+                {daysShortenNames[dayIndex]}
+                {[0, 1, 2].map((shiftIndex) => (
+                  <div
+                    key={shiftIndex}
+                    className={`grid-cell ${
+                      days[day][shiftIndex] === true ? "pick" : ""
+                    }`}
+                  ></div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </Popover.Body>
+      </Popover>
+    );
   }
 
   return (
@@ -30,12 +59,12 @@ function UserBadge({ users, removeUser }) {
         id="signed-user-container"
         className="d-flex flex-wrap gap-2 justify-content-center py-5"
       >
-        {users.map((user, index) => (
+        {props.usersArr.map((user, index) => (
           <OverlayTrigger
             key={index}
-            trigger="hover"
             placement="top"
-            overlay={renderPopover(user.userShifts)}
+            overlay={renderPopover(user.days)}
+            delay={isMobile ? null : { show: 0, hide: 800 }}
           >
             <Badge
               pill
@@ -46,7 +75,7 @@ function UserBadge({ users, removeUser }) {
               <Button
                 variant="close"
                 aria-label="Close"
-                onClick={() => removeUser(user.userName)}
+                onClick={() => console.log("i will be deleted soon")}
               />
             </Badge>
           </OverlayTrigger>

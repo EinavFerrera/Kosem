@@ -245,6 +245,40 @@ h2.warning + .accordion-collapse .col-3 > input {
 }
 
 /* --------- */
+/* User secetion */
+/* --------- */
+.table-view {
+  display: inline-flex;
+  background-color: #cfe2ff;
+  border-collapse: collapse;
+  border-radius: 10px;
+  padding: 3px;
+  position: relative;
+  top: -3px;
+  left: 2px;
+  box-shadow: inset 0 0px 14px 2px rgb(255 255 255);
+}
+.grid-cell.pick {
+  background-color: #6d757d;
+}
+.grid-col {
+  font-size: 0.5rem;
+  border-collapse: collapse;
+  width: 12px;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.grid-cell {
+  text-align: center;
+  border-collapse: collapse;
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+/* --------- */
 /* Home section */
 /* --------- */
 .wave {

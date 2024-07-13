@@ -1,25 +1,41 @@
 import Accordion from "react-bootstrap/Accordion";
 import DayNeedsInput from "./DayNeedsInput";
-import { Col, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import { useState } from "react";
+import React, { useState } from "react";
+import LoadDataModal from "./LoadDataModal";
+import Modal from "react-bootstrap/Modal";
 
 function WeekConfig(props) {
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <>
-      <Row className="justify-content-center">
-        <Col xs={7} md={4}>
+      <Row className="align-items-center">
+        <Col xs={6} className="mb-4">
           <Form.Control
-            className="mb-4"
             type="text"
-            id={"inputText_WeekName"}
-            placeholder="Enter Week Number"
+            id="inputText_WeekName"
+            placeholder="Enter week number"
             style={{ textAlign: "center" }}
+            size="sm"
             value={props.weekName}
             onChange={props.changedWeekName}
             autoFocus
           />
         </Col>
+        {props.weekName && (
+          <>
+            <Col xs={3} className="mb-4">
+              <LoadDataModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                weekName={props.weekName}
+                setLoadData={props.setLoadData}
+              />
+            </Col>
+          </>
+        )}
       </Row>
       <Row>
         <Col xs={4} lg="auto">

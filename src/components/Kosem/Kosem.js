@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Particle from "../Particle";
 import Accordion from "react-bootstrap/Accordion";
 import WeekConfig from "./WeekConfiguration/WeekConfig";
 import User from "./User/User";
 import { db } from "../../firebase";
-import { collection, addDoc, setDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  query,
+  where,
+  setDoc,
+  doc,
+  getDoc,
+} from "firebase/firestore";
+import $ from "jquery";
 
 function Kosem() {
   let needsObj = {};
@@ -16,6 +25,28 @@ function Kosem() {
   const [dataChangeCounter, setDataChangeCounter] = useState(false);
   const [weekName, setWeekName] = useState("");
   const [warningClass, setWarningClass] = useState("");
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [loadData, setLoadData] = useState(false);
+
+  useEffect(() => {
+    async function getData() {
+      const docRef = doc(db, "config", year + "_week_" + weekName);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        setIsLoaded(true);
+      } else {
+        console.log("No such document!");
+        if (weekName) {
+          document.getElementById("inputText_WeekName").placeholder =
+            "Week not found";
+          document.getElementById("inputText_WeekName").value = "";
+        }
+        setLoadData(false);
+      }
+    }
+    getData();
+  }, [loadData]);
 
   async function save_DB() {
     const data = {
@@ -47,6 +78,7 @@ function Kosem() {
     if (weekNumber) setDataChangeCounter(true);
     needsObj[weekdayName] = needsArray;
   }
+
   function changedWeekName(e) {
     changeWarningCSS(e.target.value);
     setWeekName(e.target.value);
@@ -66,9 +98,17 @@ function Kosem() {
     <Container fluid className="project-section">
       <Particle />
       <Container className="z-ind">
-        <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
-        </h1>
+        <>
+          {isLoaded ? (
+            <h1 className="project-heading">
+              Edit <strong className="purple">{weekName}</strong> Table
+            </h1>
+          ) : (
+            <h1 className="project-heading">
+              Create <strong className="purple">New</strong> Table
+            </h1>
+          )}
+        </>
         <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">
             <Accordion.Header
@@ -83,6 +123,7 @@ function Kosem() {
             </Accordion.Header>
             <Accordion.Body>
               <WeekConfig
+                setLoadData={setLoadData}
                 weekName={weekName}
                 changedWeekName={changedWeekName}
                 saveConfig_Local={saveConfig_Local}
@@ -100,7 +141,11 @@ function Kosem() {
               Users
             </Accordion.Header>
             <Accordion.Body>
-              <User saveUser_Local={saveUser_Local} />
+              <User
+                saveUser_Local={saveUser_Local}
+                setUsersArr={setUsersArr}
+                usersArr={usersArr}
+              />
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="2">
