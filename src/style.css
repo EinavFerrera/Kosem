@@ -235,16 +235,13 @@ button:focus {
 .accordion-header.warning > button {
   color: #5d2020 !important;
   background: linear-gradient(to top left, #ffa9a9, #ffc2c2) !important;
-
-  transition: 10ms;
 }
-
-input:focus {
+h2.warning + .accordion-collapse .col-3 > input {
   outline: none !important;
-  border-color: red !important;
-  box-shadow: 0 0 3px red !important;
-  -moz-box-shadow: 0 0 3px red !important;
-  -webkit-box-shadow: 0 0 3px red !important;
+  border-color: #ffa9a9 !important;
+  box-shadow: 0 0 3px #ffa9a9 !important;
+  -moz-box-shadow: 0 0 15px #ffa9a9 !important;
+  -webkit-box-shadow: 0 0 10px #ffa9a9 !important;
 }
 
 /* --------- */

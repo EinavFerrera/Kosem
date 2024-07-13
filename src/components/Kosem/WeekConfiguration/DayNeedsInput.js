@@ -5,33 +5,33 @@ import Form from "react-bootstrap/Form";
 function DayNeedsInput(props) {
   let dayNeedsObj = { 1: "1", 2: "1", 3: "1" };
 
-  function setNeeds_DayNeedsInput(inputId, num) {
+  function saveConfig_Local_DayNeedsInput(inputId, num) {
     dayNeedsObj[inputId] = num;
-    props.setNeeds(dayNeedsObj, props.dayTag);
+    props.saveConfig_Local(dayNeedsObj, props.dayTag);
   }
 
   //first call on default
-  setNeeds_DayNeedsInput(1, "1");
+  saveConfig_Local_DayNeedsInput(1, "1");
   return (
     <Container className="p-0">
-      <Row className="justify-content-md-center">
+      <Row className="justify-content-center">
         <Form.Label>{props.dayTag}</Form.Label>
         <Col className="p-0" xs="auto">
           <TextInput
             inputId={1}
-            setNeeds_DayNeedsInput={setNeeds_DayNeedsInput}
+            saveConfig_Local_DayNeedsInput={saveConfig_Local_DayNeedsInput}
           />
         </Col>
         <Col className="p-0" xs="auto">
           <TextInput
             inputId={2}
-            setNeeds_DayNeedsInput={setNeeds_DayNeedsInput}
+            saveConfig_Local_DayNeedsInput={saveConfig_Local_DayNeedsInput}
           />
         </Col>
         <Col className="p-0" xs="auto">
           <TextInput
             inputId={3}
-            setNeeds_DayNeedsInput={setNeeds_DayNeedsInput}
+            saveConfig_Local_DayNeedsInput={saveConfig_Local_DayNeedsInput}
           />
         </Col>
       </Row>

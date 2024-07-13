@@ -7,7 +7,7 @@ function TextInput(props) {
   function valChange(ev) {
     const updatedVal = ev.target.value;
     setVal(updatedVal);
-    props.setNeeds_DayNeedsInput(props.inputId, updatedVal);
+    props.saveConfig_Local_DayNeedsInput(props.inputId, updatedVal);
   }
 
   return (
