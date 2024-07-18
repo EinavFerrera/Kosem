@@ -27,13 +27,13 @@ function UserBadge(props) {
         >
           <div className="table-view">
             {[
-              "sunday",
-              "monday",
-              "tuesday",
-              "wednesday",
-              "thursday",
-              "friday",
-              "saturday",
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
             ].map((day, dayIndex) => (
               <div key={day} className="grid-col">
                 {daysShortenNames[dayIndex]}
@@ -57,7 +57,7 @@ function UserBadge(props) {
     <section className="signed-users">
       <div
         id="signed-user-container"
-        className="d-flex flex-wrap gap-2 justify-content-center py-5"
+        className="d-flex flex-wrap gap-2 justify-content-center py-3"
       >
         {props.usersArr.map((user, index) => (
           <OverlayTrigger
@@ -75,6 +75,7 @@ function UserBadge(props) {
               <Button
                 variant="close"
                 aria-label="Close"
+                style={{ width: "1%" }}
                 onClick={() => console.log("i will be deleted soon")}
               />
             </Badge>

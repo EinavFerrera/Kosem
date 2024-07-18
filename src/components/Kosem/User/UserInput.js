@@ -7,13 +7,13 @@ function UserInput(props) {
     maxShifts: "",
     minShifts: "",
     days: {
-      sunday: [false, false, false],
-      monday: [false, false, false],
-      tuesday: [false, false, false],
-      wednesday: [false, false, false],
-      thursday: [false, false, false],
-      friday: [false, false, false],
-      saturday: [false, false, false],
+      Sunday: [false, false, false],
+      Monday: [false, false, false],
+      Tuesday: [false, false, false],
+      Wednesday: [false, false, false],
+      Thursday: [false, false, false],
+      Friday: [false, false, false],
+      Saturday: [false, false, false],
     },
   };
   const [formValues, setFormValues] = useState(emptyObj);
@@ -129,13 +129,13 @@ function UserInput(props) {
         <div className="row g-3">
           <div className="col-12 text-center gy-5">
             {[
-              "sunday",
-              "monday",
-              "tuesday",
-              "wednesday",
-              "thursday",
-              "friday",
-              "saturday",
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
             ].map((day) => (
               <div
                 key={day}

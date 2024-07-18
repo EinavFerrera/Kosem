@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { useData } from "../Kosem";
 
 function LoadDataModal(props) {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -32,7 +32,7 @@ function LoadDataModal(props) {
           <Button
             variant="primary"
             onClick={() => {
-              props.setLoadData(true);
+              props.setloadData_attempt(!props.loadData_attempt);
               setShow(false);
             }}
           >

@@ -31,7 +31,8 @@ function WeekConfig(props) {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 weekName={props.weekName}
-                setLoadData={props.setLoadData}
+                setloadData_attempt={props.setloadData_attempt}
+                loadData_attempt={props.loadData_attempt}
               />
             </Col>
           </>
